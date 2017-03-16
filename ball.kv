@@ -1,0 +1,68 @@
+<GuyBall>:
+    size: 80, 80 
+    canvas:
+        Color:
+            rgba: .1,.1,.9,1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+
+<OrbitBall>:
+    size: 140, 140
+    canvas:
+        Color:
+            rgba: .8,.1,.1,1
+        Ellipse:
+            pos:self.pos
+            size:self.size
+
+<GameMenu>:
+    ImageButton:
+        id: new_game
+        
+
+
+<TangentGame>:
+    ball: guy_ball
+    orbitball1: ball1
+    orbitball2: ball2
+    
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.width, self.height
+    Label:
+        font_size: 70
+        center_x: root.width / 4 - 150
+        top: root.top - 50
+        text: "SCORE:"
+        color: .5, .5, .5, .5
+    Label:
+        font_size: 70  
+        center_x: root.width / 4 + 50
+        top: root.top - 50
+        text: str(root.ball.score)
+        color: .5, .5, .5, .5
+    
+    GuyBall:
+        id: guy_ball
+        center: self.parent.center
+        
+    OrbitBall:
+        id: ball1
+        x: root.width + 100
+        center_y: root.center_y
+        
+    OrbitBall:
+        id: ball2
+        x: root.width+400
+        center_y: root.center_y
+
+
+
+
+
+
+
+
