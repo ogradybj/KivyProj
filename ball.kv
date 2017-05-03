@@ -1,32 +1,23 @@
-<GuyBall>:
-    size: 80, 80 
-    canvas:
-        Color:
-            rgba: .1,.1,.9,1
-        Ellipse:
-            pos: self.pos
-            size: self.size
-
-
-<OrbitBall>:
-    size: 140, 140
-    canvas:
-        Color:
-            rgba: .8,.1,.1,1
-        Ellipse:
-            pos:self.pos
-            size:self.size
-
 <GameMenu>:
-    ImageButton:
+    Image:
+        id: background
+        source: "images/backgrnd1.png"
+        allow_stretch: True
+        keep_ratio: False
+
+    Button:
         id: new_game
-        
+        text: "START GAME"
+        font_size: 34
+        pos_hint: {'x':.4,'y':.4}
+        size_hint: (.2, .2)
+        on_release: print("game")
+
 
 
 <TangentGame>:
     ball: guy_ball
-    orbitball1: ball1
-    orbitball2: ball2
+
     
     canvas:
         Rectangle:
@@ -49,15 +40,7 @@
         id: guy_ball
         center: self.parent.center
         
-    OrbitBall:
-        id: ball1
-        x: root.width + 100
-        center_y: root.center_y
-        
-    OrbitBall:
-        id: ball2
-        x: root.width+400
-        center_y: root.center_y
+
 
 
 
